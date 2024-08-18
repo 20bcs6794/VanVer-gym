@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Oswald:wght@200..700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bungee+Tint&family=DM+Serif+Text:ital@0;1&family=Oswald:wght@200..700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: burlywood;
+}
+
+body {
+  font-family: "DM Serif Text", serif;
+}
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  font-family: "DM Serif Text", serif;
+}
+
+.navbar::before {
+  content: "";
+  background-color: black;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.logo {
+  color: white;
+  margin: 6px 30px;
+  font-size: 25px;
+  border-radius: 5px;
+  font-family: "Anton", sans-serif;
+
+  transition: 0.7s;
+}
+.logo:hover {
+  text-shadow: 0px 0px 20px rgba(228, 136, 15, 3);
+  cursor: none;
+  font-size: 26px;
+}
+
+nav h1 .logo-2 {
+  color: burlywood;
+  font-weight: 800;
+}
+
+.list {
+  display: flex;
+  margin: 9px 50px;
+}
+
+.list li {
+  list-style-type: none;
+}
+
+.list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  transition: 0.5s;
+}
+
+.list li a:hover {
+  text-decoration: underline;
+  text-size-adjust: 20px;
+  color: burlywood;
+  font-size: 25px;
+  text-shadow: 2px 2px 15px yellow;
+}
+
+/* Home Page Section */
+
+.hero-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 115vh;
+  position: relative;
+  background: radial-gradient(
+    circle,
+    rgba(213, 9, 9, 0) 0%,
+    rgba(15, 15, 9, 0.8) 60%
+  );
+}
+
+.hero-section::before {
+  content: "";
+  filter: brightness(50%); /* Darkens the image */
+  background: url("./photos/front-page.jpg") no-repeat center -50px / cover;
+  z-index: -1;
+  width: 100%;
+  height: 115vh;
+  top: 0px;
+  transform: translate(0%, 7%);
+  left: 0px;
+  position: absolute;
+  opacity: 0.7;
+}
+
+.hero-section .hero-intro {
+  margin-left: 30px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+  border: 5px solid burlywood;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background: transparent;
+  width:500px;
+  box-shadow: 10px 10px 10px black;
+  transform: translateY(-10%);
+}
+
+.hero-section .hero-intro .hero-name {
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.hero-intro .surname {
+  color: burlywood;
+  -webkit-text-stroke: 0.03rem black;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 70px;
+  color: white;
+  font-weight: bold;
+}
+
+/* About me */
+#me {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  padding: 20px 50px;
+  background-color: black;
+}
+
+#me::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient( black, white, burlywood);
+  filter: brightness(70%);
+
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+#about-me-photo {
+  height: 470px;
+  right: 0;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  border: 2px solid burlywood;
+  margin: 10px;
+  border-radius: 20px;
+  z-index: 2;
+  transition: all 0.7s ease;
+  object-fit: cover;
+  animation: glow-animation 2s infinite;
+}
+
+@keyframes glow-animation {
+  0% {
+    box-shadow: 0 0 30px 5px whitesmoke; /* Initial glow */
+  }
+  50% {
+    box-shadow: 0 0 50px 5px whitesmoke; /* Brighter glow in the middle */
+  }
+  100% {
+    box-shadow: 0 0 10px 5px whitesmoke; /* Return to initial glow */
+  }
+}
+
+#about-me-photo:hover {
+  /* Scale up the image */
+  transform: scale(2.5);
+  animation: none;
+  z-index: 11;
+  width: 200px; /* Cover 70% of viewport width */
+  height: 300px; /* Cover 70% of viewport height */
+  bottom: 25%;
+  top: 25%;
+  right: 60px;
+}
+
+.about-me-content {
+  height: 85%;
+  z-index: 2;
+  width: 100px;
+  margin-top: 100px;
+  font-family: "DM Serif Text", serif;
+  color: white;
+  text-align: center;
+  width: 700px;
+  padding: 30px;
+}
+
+.about-me {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: burlywood;
+  font-family: "Archivo Black", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.about-description {
+  font-size: 1.3rem;
+}
+
+/* Programs and workout */
+#programs {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(white, 20%, black);
+  min-height: 100vh;
+  position: relative;
+}
+
+.program-heading {
+  font-size: 3rem;
+  color: burlywood;
+  font-family: "Archivo Black", sans-serif;
+}
+
+#programs .program {
+  padding: 30px;
+  border: 5px solid white;
+  border-radius: 10px;
+  margin: 20px 20px;
+  color: white;
+  height: 500px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  filter: grayscale(8);
+  transition: all 0.7s ease;
+}
+
+#programs .program:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
+  animation: glow-program 1s infinite;
+}
+
+#programs .program:hover .program-name {
+  margin-bottom: 5rem;
+  border: 0px;
+  background-color: burlywood;
+  color: whitesmoke;
+}
+@keyframes glow-program {
+  0% {
+    box-shadow: 0 0 5px 3px rgba(239, 237, 237, 0.941); /* Soft glow */
+  }
+  50% {
+    box-shadow: 0 0 10px 8px rgba(255, 255, 255, 1); /* Stronger glow */
+  }
+  100% {
+    box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.966); /* Back to soft glow */
+  }
+}
+
+.program-name {
+  border: 5px solid burlywood;
+  font-family: "Archivo Black", sans-serif;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
+  padding: 18px 50px;
+  font-weight: 900;
+  color: burlywood;
+  cursor: pointer;
+  outline: none;
+}
+
+#programs .beginner {
+  background: url("./photos/beginner.jpg") no-repeat center center/cover;
+}
+
+#programs .hypertrophy {
+  background: url("./photos/hypertrophy.jpg") no-repeat center center/cover;
+}
+
+#programs .lean-gain {
+  background: url("./photos/bulk.jpg") no-repeat center center/cover;
+}
+
+#programs .cutting {
+  background: url("./photos/cutting.jpg") no-repeat center center/cover;
+}
+
+/* Meals */
+#meals {
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.8) 80%
+  );
+}
+
+#meals::before {
+  content: "";
+  background: url("./meal-photo/meal-bg.jpg") no-repeat center center/cover;
+  filter: brightness(50%); /* Darkens the image */
+  filter: blur(3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+}
+
+#meals .meal-heading {
+  color: White;
+  font-size: 4rem;
+  margin-top: 4rem;
+}
+
+#meals div .diet-box {
+  border: 1px solid white;
+  padding: 30px;
+  margin: 30px 40px;
+  text-align: center;
+  position: relative;
+  min-height: 85%;
+  border-radius: 50px;
+  backdrop-filter: blur(1.5px);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(118, 77, 24, 0.8) 100%
+  );
+  transition: 0.7s ease;
+}
+
+#meals div .diet-box:hover {
+  animation: blink-glow 1s infinite;
+
+  transform: scale(1.1);
+  transform: translate(center);
+}
+
+@keyframes blink-glow {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Soft glow */
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 1); /* Stronger glow */
+  }
+  100% {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Back to soft glow */
+  }
+}
+
+#meals div .snack-meal {
+  backdrop-filter: blur(1.5px);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(58, 148, 175, 0.8) 100%
+  );
+}
+
+#meals div .cheat-meal {
+  backdrop-filter: blur(1.5px);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(104, 63, 190, 0.8) 100%
+  );
+}
+
+.meal-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 2px solid whitesmoke;
+}
+
+.btn {
+  padding: 10px 30px;
+  margin: 20px 0px;
+  font-family: "Archivo Black", sans-serif;
+  background-color: transparent;
+  border: 5px solid;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.diet-btn {
+  border: 3px solid burlywood;
+  color: burlywood;
+}
+
+.diet-btn:hover {
+  border: 0px;
+  background-color: burlywood;
+  color: #ffffff;
+}
+
+.snack-btn {
+  border: 3px solid lightcyan;
+  color: lightcyan;
+}
+
+.snack-btn:hover {
+  border: 0px;
+  background-color: lightcyan;
+  color: rgb(136, 136, 243);
+}
+
+.cheat-btn {
+  border: 3px solid rgba(160, 124, 237, 0.8);
+  color: rgba(126, 154, 220, 0.8);
+  outline: auto;
+}
+
+.cheat-btn:hover {
+  border: 0px;
+  background-color: rgba(104, 63, 190, 0.8);
+  color: white;
+}
+
+.footer {
+  background: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer span {
+  margin-right: 5px;
+}
+
+.footer h1 {
+  text-align: center;
+  border: 5px solid white;
+  font-size: 1rem;
+}
